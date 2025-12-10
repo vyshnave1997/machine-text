@@ -15,8 +15,7 @@ An interactive, visually stunning inbox interface built with React, D3.js, and G
 
 ## 🚀 Technologies
 
-- **React 18+** with TypeScript
-- **Next.js** (App Router)
+- **Next.js** (App Router) with TypeScript
 - **D3.js** for force-directed graphs
 - **GSAP** for advanced animations
 - **SCSS Modules** for styling
