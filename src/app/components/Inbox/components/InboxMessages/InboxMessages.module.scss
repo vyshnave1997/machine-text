@@ -1,0 +1,253 @@
+.messagesPanel {
+  flex: 1;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 62px);
+  margin: 7px 7px 7px 7px;
+  border-radius: 8px;
+}
+
+.messagesHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.messageHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.messageHeaderName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.messageHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.iconButton {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  
+  &:hover {
+    background: #f3f4f6;
+    color: #111827;
+  }
+}
+
+.messagesArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  background: #f9fafb;
+}
+
+.dateStamp {
+  text-align: center;
+  margin: 20px 0 16px 0;
+}
+
+.dateText {
+  display: inline-block;
+  background: #e5e7eb;
+  color: #6b7280;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.messageGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 100%;
+}
+
+.messageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 70%;
+}
+
+.messageWrapperLeft {
+  align-self: flex-start;
+}
+
+.messageWrapperRight {
+  align-self: flex-end;
+}
+
+.skeletonMessageLeft,
+.skeletonMessageRight {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 65%;
+}
+
+.skeletonMessageRight {
+  align-self: flex-end;
+}
+
+.messageTimestamp {
+  font-size: 10px;
+  color: #9ca3af;
+  padding: 0 8px 2px 8px;
+}
+
+.messageBubbleLeft,
+.messageBubbleRight {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.messageBubbleLeft {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-top-left-radius: 4px;
+}
+
+.messageBubbleRight {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #dbeafe;
+  border-top-right-radius: 4px;
+}
+
+.messageLink {
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+  
+  &:hover {
+    color: #1d4ed8;
+  }
+}
+
+.inputArea {
+  padding: 11px 11px 11px 11px;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  min-height: 93px;
+  position: sticky;
+  bottom: 10%;
+  z-index: 10;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.inputWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  
+  &:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+  }
+}
+
+.inputIconButton {
+  background: none;
+  border: none;
+  color: #374151;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: #111827;
+  }
+}
+
+.messageInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #111827;
+  background: transparent;
+  
+  &::placeholder {
+    color: #9ca3af;
+  }
+}
+
+.aiButton,
+.micButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #374151;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: #f3f4f6;
+    color: #111827;
+  }
+}
+
+.skeletonLine {
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
