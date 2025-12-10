@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Honeycomb Inbox Interface
 
-## Getting Started
+An interactive, visually stunning inbox interface built with React, D3.js, and GSAP animations. Features a unique honeycomb navigation system that transforms data extraction into an engaging visual experience.
 
-First, run the development server:
+![Demo](./demo.gif)
 
+## ✨ Features
+
+- **Interactive Honeycomb Navigation**: Dynamic D3.js-powered honeycomb cells with hover effects and drag functionality
+- **Smooth Animations**: GSAP-powered transitions between states
+- **Multi-Category Support**: Messages, Contacts, Team, Groups, Favorites, and Connections
+- **Responsive Design**: Adapts to different screen sizes with glassmorphism effects
+- **Real-time Data Fetching**: Integrates with multiple APIs to display various data types
+- **Animated Transitions**: Honeycomb cells animate into the inbox when clicked
+
+## 🚀 Technologies
+
+- **React 18+** with TypeScript
+- **Next.js** (App Router)
+- **D3.js** for force-directed graphs
+- **GSAP** for advanced animations
+- **SCSS Modules** for styling
+- **JSONPlaceholder, DummyJSON, ReqRes** for demo data
+
+## 📦 Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/honeycomb-inbox.git
+cd honeycomb-inbox
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Add required assets:
+   - Place `hero.gif` in the `/public` directory
+   - Add icon images in `/public/icons/`:
+     - `employees.png`
+     - `inbox.png`
+     - `contacts.png`
+     - `team.png`
+     - `workflows.png`
+     - `campaign.png`
+
+4. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔧 Configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Environment Variables
 
-## Learn More
+Create a `.env.local` file in the root directory to customize API endpoints:
 
-To learn more about Next.js, take a look at the following resources:
+```env
+NEXT_PUBLIC_MESSAGES_API=https://jsonplaceholder.typicode.com/comments
+NEXT_PUBLIC_USERS_API=https://dummyjson.com/users
+NEXT_PUBLIC_GROUPS_API=https://jsonplaceholder.typicode.com/albums
+NEXT_PUBLIC_POSTS_API=https://jsonplaceholder.typicode.com/posts
+NEXT_PUBLIC_CONNECTIONS_API=https://reqres.in/api/users?page=1
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+├── app/
+│   └── page.tsx                    # Main page component
+├── components/
+│   ├── honeycombbutton.tsx         # Honeycomb button containers
+│   ├── Honeycomb.tsx               # D3.js honeycomb cells
+│   ├── Inbox.tsx                   # Main inbox component
+│   ├── InboxNavbar.tsx             # Navigation bar
+│   ├── InboxSidebar.tsx            # Sidebar component
+│   ├── InboxChatList.tsx           # Chat list view
+│   ├── InboxMessages.tsx           # Messages view
+│   ├── InboxDetails.tsx            # Details panel
+│   └── inbox.module.scss           # Inbox styles
+├── public/
+│   ├── hero.gif                    # Hero animation
+│   └── icons/                      # Category icons
+└── README.md
+```
 
-## Deploy on Vercel
+## 🎨 Customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Honeycomb Cells
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Modify the `leftHoneycombCells` and `rightHoneycombCells` arrays in `honeycombbutton.tsx`:
+
+```typescript
+const customCells = [
+  { 
+    id: 1, 
+    icon: <YourIcon />, 
+    size: 50, 
+    label: 'custom',
+    link: '/custom-route'
+  }
+];
+```
+
+### Colors & Theme
+
+Update gradient colors in `page.tsx`:
+
+```typescript
+background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)'
+```
+
+### Animation Timing
+
+Adjust GSAP animation durations:
+
+```typescript
+gsap.to(element, {
+  duration: 1.8,  // Customize duration
+  ease: 'power3.out'  // Change easing function
+});
+```
+
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Inspired by modern glassmorphism design trends
+- D3.js community for force-directed graph examples
+- GSAP for animation framework
+
+
+
+
+---
+
+⭐ Star this repo if you find it helpful!
