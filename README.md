@@ -25,7 +25,7 @@ An interactive, visually stunning inbox interface built with React, D3.js, and G
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/honeycomb-inbox.git
+git clone(https://github.com/vyshnave1997/machine-text)
 cd honeycomb-inbox
 ```
 
